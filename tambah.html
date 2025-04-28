@@ -63,3 +63,25 @@
       let elemenprioritas = document.getElementById('input-prioritas');
       let elementanggal = document.getElementById('input-tanggal');
 
+
+
+
+tomboltambah.addEventListener('click', async function(e) {
+        e.preventDefault();
+if (
+  elementugas.value.trim() === '' ||
+  elemenstatus.value === 'status' ||
+  elemenprioritas.value === 'proritas' ||
+  elementanggal.value === ''
+) {
+  alert('Semua field harus diisi dengan benar!');
+  return;
+}
+        await tambahtugas(elementugas.value, elemenstatus.value, elemenprioritas.value, elementanggal.value);
+        window.location.href = 'index.html'
+      })
+    </script>
+
+</body>
+
+</html>
