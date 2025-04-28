@@ -123,3 +123,20 @@ $(document).on("click", ".btn-status", function () {
   console.log(`Status tugas ID ${tugasId} diubah menjadi ${statusBaru}`);
 });
 
+// Fungsi untuk memperbarui warna tombol berdasarkan status
+function updateWarnaStatus(button, status) {
+  if (status === "Belum Selesai") {
+    button.css("background-color", "#dc3545").css("color", "white");
+  } else if (status === "Sedang Dikerjakan") {
+    button.css("background-color", "#ffc107").css("color", "black");
+  } else {
+    button.css("background-color", "#28a745").css("color", "white");
+  }
+}
+
+// Atur warna status setelah halaman dimuat
+$(document).ready(function () {
+  $(".btn-status").each(function () {
+    updateWarnaStatus($(this), $(this).attr("data-status"));
+  });
+});
