@@ -89,3 +89,37 @@ function ubahStatus(tombol) {
   }
 }
 
+// Event listener untuk hapus tugas
+$(".tombol-hapus").click(async function () {
+  await hapustugas($(this).attr("data-id"));
+  location.reload();
+});
+
+// Event listener untuk ubah tugas
+$(".ubah").click(async function () {
+  window.location.replace("ubahtugas.html?docId=" + $(this).attr("data-id"));
+});
+
+// Gunakan event delegation agar berfungsi pada elemen dinamis
+$(document).on("click", ".btn-status", function () {
+  let tugasId = $(this).attr("data-id");
+  let statusSekarang = $(this).attr("data-status");
+  let statusBaru;
+
+  if (statusSekarang === "Belum Selesai") {
+    statusBaru = "Sedang Dikerjakan";
+  } else if (statusSekarang === "Sedang Dikerjakan") {
+    statusBaru = "Selesai";
+  } else {
+    statusBaru = "Belum Selesai";
+  }
+
+  // Update tampilan tombol
+  $(this).attr("data-status", statusBaru);
+  $(this).text(statusBaru);
+  updateWarnaStatus($(this), statusBaru);
+
+  // Tambahkan kode AJAX jika ingin menyimpan perubahan status ke database
+  console.log(`Status tugas ID ${tugasId} diubah menjadi ${statusBaru}`);
+});
+
