@@ -98,3 +98,28 @@ $(document).ready(async function() {
          nomor++;
        });
 
+       // Gunakan event delegation untuk hapus tugas
+       $(document).on('click', '.tombol-hapus', async function() {
+         await hapustugas($(this).attr('data-id'));
+         location.reload();
+       });
+
+       // Gunakan event delegation untuk ubah tugas
+       $(document).on('click', '.ubah', function() {
+         let docId = $(this).attr('data-id');
+         let tugas = $(this).attr('data-tugas');
+         let status = $(this).attr('data-status');
+         let prioritas = $(this).attr('data-prioritas');
+         let tanggal = $(this).attr('data-tanggal');
+
+         window.location.replace(`ubahtugas.html?docId=${docId}&tugas=${tugas}&status=${status}&prioritas=${prioritas}&tanggal=${tanggal}`);
+       });
+     });
+   </script>
+   
+ 
+   <h1>ayu lestari putri bu asiah dan bapa pacing </h1>
+
+ </body>
+
+ </html>
