@@ -33,3 +33,21 @@ h1 {
   transition: border-color 0.3s;
 }
 
+.form-control:focus, .form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-primary {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  transition: 0.3s;
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
