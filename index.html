@@ -18,7 +18,15 @@
   
    <body>
    <table class="table" id="daftar-tugas">
-     
+     <!-- dropdown -->
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      menu
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="tambah.html">tambah</a></li>
+    </ul>
+  </div>
        <style>
   body {
 background-color: skyblue;
@@ -72,7 +80,6 @@ background-color: skyblue;
    </table>
 
 
-   <a href="tambah.html" class="tombol">tambah</a>
 
    <script type="module">
      import { ambildaftartugas, hapustugas } from './main.js';
